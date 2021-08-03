@@ -86,7 +86,7 @@ function GlobalSales() {
         setSalesData(newArr);
         setisReloadPagination(!isReloadPagination);
       }
-    } else {
+    } else if (searchText && searchText != ' ') {
       newArr = salesData.filter(
         (arr) =>
           arr.company.toLocaleLowerCase() ==
