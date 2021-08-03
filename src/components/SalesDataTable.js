@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import Pagination from './Pagination';
 import SalesIcon from '../assets/icons/salesicon.png';
 
@@ -7,13 +7,15 @@ let PageSize = 10;
 function SalesDataTable(props) {
   const [currentPage, setCurrentPage] = useState(1);
   const [pageSales, setPageSales] = useState(null);
-
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [props.reloadPagination]);
   const totalSales = props.totalValue;
   var iniPageSales = 0;
 
   const data = props.data;
   let firstPageData = [];
-
+  debugger;
   const currentTableData = useMemo(() => {
     const firstPageIndex = (currentPage - 1) * PageSize;
     const lastPageIndex = firstPageIndex + PageSize;

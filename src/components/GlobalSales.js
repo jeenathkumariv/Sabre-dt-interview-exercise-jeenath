@@ -14,6 +14,7 @@ function GlobalSales() {
   const [higherSalesCount, setHigherSalesCount] = useState(0);
   const [searchValue, setSearchValue] = useState(0);
   const [searchText, setSearchText] = useState('');
+  const [isReloadPagination, setisReloadPagination] = useState(true);
   const [reload, setReload] = useState(false);
 
   useEffect(() => {
@@ -71,19 +72,23 @@ function GlobalSales() {
   const handleFilter = function (event) {
     event.preventDefault();
     let newArr = [];
+    debugger;
     if (searchValue > 0) {
       if (searchText) {
         newArr = salesData.filter(
           (arr) => arr.company == searchText && arr.sales > searchValue
         );
         setSalesData(newArr);
+        setisReloadPagination(!isReloadPagination);
       } else {
         newArr = salesData.filter((arr) => arr.sales > searchValue);
         setSalesData(newArr);
+        setisReloadPagination(!isReloadPagination);
       }
     } else {
       newArr = salesData.filter((arr) => arr.company == searchText);
       setSalesData(newArr);
+      setisReloadPagination(!isReloadPagination);
     }
   };
 
@@ -130,7 +135,11 @@ function GlobalSales() {
           REFRESH DATA
         </a>
       </div>
-      <SalesDataTable data={salesData} totalValue={totalSalesValue} />
+      <SalesDataTable
+        data={salesData}
+        totalValue={totalSalesValue}
+        reloadPagination={isReloadPagination}
+      />
 
       <SalesAverage
         higherSalesAvg={higherSalesAvg}
