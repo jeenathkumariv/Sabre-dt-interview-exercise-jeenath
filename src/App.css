@@ -1,3 +1,14 @@
+:root {
+  --white-color: #fff;
+  --primary-color-1: #f5f5f5;
+  --base-font-family: sans-serif;
+  --base-font-color: #333;
+  --base-font-size: 8px;
+}
+
 body {
-  background-color: #282c34;
+  font-family: var(--base-font-family);
+  font-size: var(--base-font-size);
+  color: var(--base-font-color);
+  background-color: var(--white-color);
 }

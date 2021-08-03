@@ -1,11 +1,9 @@
 import './App.css';
+import './assets/css/globalSales.css';
+import GlobalSales from './components/GlobalSales';
 
 function App() {
-  return (
-    <div>
-
-    </div>
-  );
+  return <GlobalSales />;
 }
 
 export default App;

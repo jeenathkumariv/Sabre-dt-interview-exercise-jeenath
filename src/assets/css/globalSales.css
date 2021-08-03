@@ -1,0 +1,252 @@
+.container {
+  background-color: var(--primary-color-1);
+  width: 800px;
+  margin: auto;
+  padding: 20px;
+}
+.header {
+  width: 750px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+  margin: auto;
+  font-size: calc(var(--base-font-size) + 10px);
+}
+
+.search-section {
+  width: 750px;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  border-radius: 24px;
+  background-color: var(--white-color);
+  box-shadow: 0 0 5px lightgrey;
+}
+
+.search-form {
+  padding: 40px 15px;
+  width: 90%;
+}
+
+.company-search,
+.range-text {
+  height: 100px;
+  font-size: calc(var(--base-font-size) + 18px);
+  width: 98%;
+  padding-left: 10px;
+  background: var(--primary-color-1);
+  border-radius: 15px;
+  opacity: 0.8;
+}
+
+.company-search:focus,
+.range-text:focus {
+  border-radius: 15px;
+  outline: none;
+  box-shadow: 0 0 5px #719ece;
+}
+.slider-header {
+  font-size: calc(var(--base-font-size) + 14px);
+  opacity: 0.8;
+}
+.btn-primary {
+  font-size: calc(var(--base-font-size) + 10px);
+  color: var(--white-color);
+  background-color: var(--base-font-color);
+  width: 100%;
+  line-height: 22px;
+  font-weight: 700;
+  height: 50px;
+  margin-top: 20px;
+  border: 5px solid black;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.range {
+  display: flex;
+  justify-content: space-between;
+}
+.range-slider {
+  width: 300px;
+}
+.range-text {
+  height: 50px;
+  width: 150px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+.refresh {
+  font-size: calc(var(--base-font-size) + 18px);
+  font-weight: 600;
+  cursor: pointer;
+}
+.table-container {
+  width: 750px;
+  margin: auto;
+  padding: 10px;
+  border-radius: 20px;
+}
+.sales-data-table {
+  width: 100%;
+  background: var(--white-color);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  font-size: calc(var(--base-font-size) + 10px);
+}
+.column,
+.sales-data-table-row {
+  height: 60px;
+  font-weight: 600;
+  opacity: 0.8;
+  text-align: left;
+  border-bottom: 3px solid var(--primary-color-1);
+}
+.column {
+  border-bottom: 5px solid var(--primary-color-1);
+  opacity: 0.6;
+}
+
+.number-value {
+  text-align: right;
+  padding-right: 20px;
+}
+table {
+  border-collapse: collapse;
+}
+.pagination-bar {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.total-sales {
+  background: #f8f8f8;
+  box-shadow: 0 0 5px lightgrey;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  padding-left: 50px;
+}
+.price-display {
+  display: flex;
+  justify-content: space-between;
+  padding-right: 20px;
+}
+.flex-space-between {
+  display: flex;
+  justify-content: space-between;
+}
+.sales-section-top {
+  width: 750px;
+  margin: auto;
+
+  padding: 15px;
+  border-top-right-radius: 24px;
+  border-top-left-radius: 24px;
+  background-color: var(--white-color);
+  box-shadow: 0 0 5px lightgrey;
+}
+.sales-section-bottom {
+  width: 750px;
+  margin: auto;
+
+  padding: 15px;
+  border-bottom-right-radius: 24px;
+  border-bottom-left-radius: 24px;
+  background-color: var(--white-color);
+  box-shadow: 0 0 5px lightgrey;
+}
+
+.pd-l-50 {
+  padding-left: 50px;
+}
+
+.pd-r-20 {
+  padding-right: 20px;
+}
+
+.loader-overlay {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2em;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 800;
+  transition: opacity 150ms ease-in;
+}
+.loader-gif {
+  height: 50px;
+  margin: 0 auto;
+}
+.high-sales-icon {
+  height: 30px;
+  width: 30px;
+}
+.high-sales-icon {
+  animation: shake 1s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+@keyframes shake {
+  10%,
+  90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  20%,
+  80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%,
+  50%,
+  70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%,
+  60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+
+@media all and (max-width: 550px) {
+  .container {
+    width: 90%;
+  }
+  .header,
+  .search-section,
+  .table-container,
+  .sales-section-top,
+  .sales-section-bottom {
+    width: 85%;
+  }
+}
+
+@media all and (max-width: 480px) {
+  .container {
+    width: 98%;
+  }
+  .header,
+  .search-section,
+  .table-container,
+  .sales-section-top,
+  .sales-section-bottom {
+    width: 95%;
+    overflow: scroll;
+  }
+}
