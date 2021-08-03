@@ -73,9 +73,9 @@ function GlobalSales() {
     event.preventDefault();
     let newArr = [];
     if (searchValue > 0) {
-      if (searchText) {
+      if (searchText && searchText != ' ') {
         newArr = salesData.filter(
-          (arr) => arr.company == searchText && arr.sales > searchValue
+          (arr) => arr.company == searchText.trim() && arr.sales > searchValue
         );
         setSalesData(newArr);
         setisReloadPagination(!isReloadPagination);
@@ -85,13 +85,14 @@ function GlobalSales() {
         setisReloadPagination(!isReloadPagination);
       }
     } else {
-      newArr = salesData.filter((arr) => arr.company == searchText);
+      newArr = salesData.filter((arr) => arr.company == searchText.trim());
       setSalesData(newArr);
       setisReloadPagination(!isReloadPagination);
     }
   };
 
   const reloadData = function () {
+    setSearchText(' ');
     setIsLoading(true);
     setReload(!reload);
   };

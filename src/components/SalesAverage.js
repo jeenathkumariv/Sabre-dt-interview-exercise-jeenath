@@ -5,7 +5,9 @@ function SalesAverage(props) {
   const higherSalesCount = props.higherSalesCount;
   return (
     <div>
-      <h1 style={{ paddingLeft: '20px' }}>Top Performers ($800+ / Month)</h1>
+      <h1 style={{ paddingLeft: '20px', fontSize: '24px' }}>
+        Top Performers ($800+ / Month)
+      </h1>
 
       <div className='sales-section-top flex-space-between'>
         <h1>Number of Clients</h1>
