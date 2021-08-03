@@ -72,7 +72,6 @@ function GlobalSales() {
   const handleFilter = function (event) {
     event.preventDefault();
     let newArr = [];
-    debugger;
     if (searchValue > 0) {
       if (searchText) {
         newArr = salesData.filter(

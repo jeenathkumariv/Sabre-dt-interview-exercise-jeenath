@@ -15,7 +15,6 @@ function SalesDataTable(props) {
 
   const data = props.data;
   let firstPageData = [];
-  debugger;
   const currentTableData = useMemo(() => {
     const firstPageIndex = (currentPage - 1) * PageSize;
     const lastPageIndex = firstPageIndex + PageSize;
