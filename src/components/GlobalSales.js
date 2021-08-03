@@ -75,7 +75,9 @@ function GlobalSales() {
     if (searchValue > 0) {
       if (searchText && searchText != ' ') {
         newArr = salesData.filter(
-          (arr) => arr.company == searchText.trim() && arr.sales > searchValue
+          (arr) =>
+            arr.company.toLocaleLowerCase() ==
+              searchText.trim().toLocaleLowerCase() && arr.sales > searchValue
         );
         setSalesData(newArr);
         setisReloadPagination(!isReloadPagination);
@@ -85,7 +87,11 @@ function GlobalSales() {
         setisReloadPagination(!isReloadPagination);
       }
     } else {
-      newArr = salesData.filter((arr) => arr.company == searchText.trim());
+      newArr = salesData.filter(
+        (arr) =>
+          arr.company.toLocaleLowerCase() ==
+          searchText.trim().toLocaleLowerCase()
+      );
       setSalesData(newArr);
       setisReloadPagination(!isReloadPagination);
     }
